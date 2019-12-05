@@ -11,8 +11,8 @@
       delegate_to: "{{groups['app'][1]}}"
       register: syncfile
       run_once: true
-      with_items:
-       - "/tmp/pruebaUbuntu.txt"
+      #with_items:
+       #- "/tmp/pruebaUbuntu.txt"
 
 - name: Sync Push task - Executed on "{{groups['app'][1]}}"
   hosts: "{{groups['app'][1]}}" 
@@ -26,5 +26,5 @@
         mode: pull
       delegate_to: "{{groups['app'][0]}}"
       register: syncfile
-      with_items:
-       - "/tmp/pruebaCentOs.txt"
+     # with_items:
+      # - "/tmp/pruebaCentOs.txt"

@@ -1,5 +1,5 @@
 ---
-- name: Sync Pull task - Executed on "{{groups['app'][0]}}"
+- name: Sync Pull task - Executed on "{{groups['app'][{{ i }}]}}"
   hosts: "{{groups['app'][0]}}"
   tasks:   
     - name: Copy the file from Ubuntu to CentOs using Method Pull

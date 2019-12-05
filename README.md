@@ -1,7 +1,7 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+Playbook para copiar archivos entre dos servidores A y B lanzado desde una tercera máquina C
 
 Requirements
 ------------

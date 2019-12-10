@@ -5,8 +5,8 @@
     - name: Copy the file from Ubuntu to CentOs using Method Pull
       tags: sync-pull
       synchronize:
-        src: "{{ item }}"
-        dest: "{{ item }}"
+        src: "{{ itemO }}"
+        dest: "{{ itemD }}"
         mode: pull
       delegate_to: "{{groups['Destino'][0]}}"
       register: syncfile

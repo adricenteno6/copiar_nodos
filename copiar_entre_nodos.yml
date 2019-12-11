@@ -1,8 +1,8 @@
 ---
 - name: Sync Pull task - Executed on "{{groups['Origen'][0]}}"
   hosts: "{{groups['Origen'][0]}}"
-  tasks:   
-    - name: Copy the file from Ubuntu to CentOs using Method Pull
+  tasks:
+    - name: Copy the file from "{{groups['Origen'][0]}}" to "{{groups['Destino'][0]}}" using Method Pull
       tags: sync-pull
       synchronize:
         src: "{{ itemO }}"

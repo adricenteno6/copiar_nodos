@@ -1,0 +1,20 @@
+---
+- name: Poner página de mantenimiento
+  hosts: "{{groups['prueba'][0]}}"
+  become: true
+
+  tasks:
+    - name: Cambiar dirección de la index
+      lineinfile:
+        path: /etc/apache2/apache2.conf
+        regexp: "<Directory /var/www/>"
+        line: "<Directory /home/adricenteno6/>"
+        state: present
+    - name: Modificar DocumentRoot
+      lineinfile:
+        path: /etc/apache2/sites-available/000-default.conf
+        regexp: "       DocumentRoot /var/www/html"
+        line: " DocumentRoot /home/adricenteno6/"
+        state: present
+    - name: restart apache2
+      service: name=apache2 state=restarted

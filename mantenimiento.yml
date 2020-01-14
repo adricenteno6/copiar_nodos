@@ -13,8 +13,8 @@
     - name: Modificar DocumentRoot
       lineinfile:
         path: /etc/apache2/sites-available/000-default.conf
-        regexp: " DocumentRoot /var/www/html"
-        line: " DocumentRoot /home/adricenteno6/"
+        regexp: "        DocumentRoot /var/www/html"
+        line: "        DocumentRoot /home/adricenteno6/"
         state: present
     - name: restart apache2
       service: name=apache2 state=restarted

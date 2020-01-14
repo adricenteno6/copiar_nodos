@@ -1,6 +1,6 @@
 ---
 - name: Poner página de mantenimiento
-  hosts: "{{groups['Origen'][0]}}"
+  hosts: "{{groups['prueba'][0]}}"
   become: true
 
   tasks:
@@ -13,7 +13,7 @@
     - name: Modificar DocumentRoot
       lineinfile:
         path: /etc/apache2/sites-available/000-default.conf
-        regexp: "       DocumentRoot /var/www/html"
+        regexp: " DocumentRoot /var/www/html"
         line: " DocumentRoot /home/adricenteno6/"
         state: present
     - name: restart apache2

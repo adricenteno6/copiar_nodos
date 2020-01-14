@@ -1,6 +1,6 @@
 ---
 - name: Poner página de mantenimiento
-  hosts: "{{groups['prueba'][0]}}"
+  hosts: "{{groups['Origen'][0]}}"
   become: true
 
   tasks:

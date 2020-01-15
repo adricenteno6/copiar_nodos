@@ -7,14 +7,14 @@
       - name: Cambiar dirección de la index
         replace:
           path: /etc/apache2/apache2.conf     
-          regexp: '<Directory /var/www/>'
-          replace: '<Directory /home/adricenteno6/>'
+          regexp: '{{ Conf1 }}'
+          replace: '{{ Conf2 }}'
 
       - name: Modificar DocumentRoot
         replace:
           path: /etc/apache2/sites-available/000-default.conf
-          regexp: 'DocumentRoot /var/www/html'
-          replace: 'DocumentRoot /home/adricenteno6/'
+          regexp: '{{ Document_Root1 }}'
+          replace: '{{ Document_Root2 }}'
 
       - name: restart apache2
         service: name=apache2 state=restarted

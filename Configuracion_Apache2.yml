@@ -1,0 +1,21 @@
+---
+  - name: Poner página de mantenimiento
+    hosts: "{{groups['Origen'][0]}}"
+    become: true
+ 
+    tasks:
+      - name: Cambiar dirección de la index
+        replace:
+          path: /etc/apache2/apache2.conf     
+          regexp: '{{ Conf1 }}'
+          replace: '{{ Conf2 }}'
+
+      - name: Modificar DocumentRoot
+        replace:
+          path: /etc/apache2/sites-available/000-default.conf
+          regexp: '{{ Document_Root1 }}'
+          replace: '{{ Document_Root2 }}'
+
+      - name: restart apache2
+        service: name=apache2 state=restarted
+
